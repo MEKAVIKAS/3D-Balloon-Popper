@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance?.ShowGameOverPanel(true, _score);
 
         // Destroy all remaining balloons in the scene
-        foreach (var balloon in GameObject.FindGameObjectsWithTag("Balloon"))
+        foreach (var balloon in GameObject.FindGameObjectsWithTag("balloon"))
         {
             Destroy(balloon);
         }

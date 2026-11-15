@@ -154,7 +154,7 @@ public static class BalloonPopperSetup
         // Create balloon body
         GameObject balloonGO = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         balloonGO.name = "Balloon";
-        balloonGO.tag  = "Balloon";   // Needed so GameManager can find all balloons at end
+        balloonGO.tag  = "balloon";   // Needed so GameManager can find all balloons at end
 
         // Scale to look like a balloon (taller than wide)
         balloonGO.transform.localScale = new Vector3(1f, 1.3f, 1f);
@@ -348,6 +348,9 @@ public static class BalloonPopperSetup
             // Disable collider (not clickable on menu)
             Collider col = balloon.GetComponent<Collider>();
             if (col != null) col.enabled = false;
+
+            // Ensure decorative menu balloons remain Untagged
+            balloon.tag = "Untagged";
         }
     }
 

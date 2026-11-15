@@ -8,10 +8,10 @@ A complete, polished, playable 3D Balloon Popper game developed in **Unity 6** u
 
 - **Dynamic Balloon Spawning:** Colorful balloons (Red, Blue, Yellow, Green, Purple) spawn randomly across the bottom of the screen.
 - **Varied Float Speeds:** Balloons rise at randomized velocities.
-- **Raycast Popping Mechanic:** Interactive mouse-click popping using Unity's input system and colliders.
+- **Mouse-Click Popping Mechanic:** Mouse-click balloon popping using Unity's `OnMouseDown` method and Collider components.
 - **Particle & Visual Feedback:** Dynamic popping particle effects that inherit the color of the popped balloon.
 - **Score & Countdown Timer:** Real-time HUD showing current score and a 60-second countdown timer.
-- **Game State Management:** Centralized `GameManager` handling round start, active gameplay, game over, and restart.
+- **Game State Management:** Centralized `GameManager` handling round start, active gameplay, game over cleanup, and restart.
 - **Main Menu & Game Over Screen:** Clean UI built with TextMeshPro, complete with instructions, score review, and restart / main menu transitions.
 
 ---
@@ -21,6 +21,7 @@ A complete, polished, playable 3D Balloon Popper game developed in **Unity 6** u
 - **Engine Version:** Unity 6 (`6000.6.7f1`)
 - **Render Pipeline:** Universal Render Pipeline (URP)
 - **Programming Language:** C#
+- **Input Handling:** Both Input Systems enabled (`activeInputHandler: 2`, supporting `OnMouseDown` collision events alongside uGUI / Input System)
 - **Target Platform:** Desktop macOS (Apple Silicon) / Cross-platform
 - **UI Framework:** Unity UI (uGUI) & TextMeshPro
 
@@ -30,7 +31,7 @@ A complete, polished, playable 3D Balloon Popper game developed in **Unity 6** u
 
 ```
 Assets/
-├── Editor/          # Automation setup scripts
+├── Editor/          # Automation setup scripts (BalloonPopperSetup.cs)
 ├── Materials/       # URP materials for balloons, background, and particles
 ├── Particles/       # Pop effect particle prefab
 ├── Prefabs/         # Balloon prefab with colliders and controllers
